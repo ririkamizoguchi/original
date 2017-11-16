@@ -9,9 +9,3 @@ Rails.application.routes.draw do
   resources :situations
   resources :original
 end
-
-
-
-
-
-
