@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115060522) do
+ActiveRecord::Schema.define(version: 20171115081416) do
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comments",   limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.integer  "post_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.integer  "prefecture_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -19,6 +39,27 @@ ActiveRecord::Schema.define(version: 20171115060522) do
     t.text     "image",      limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string   "prefecture", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "situations", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "nickname",   limit: 255
+    t.string   "password",   limit: 255
+    t.text     "intro",      limit: 65535
+    t.text     "image",      limit: 65535
+    t.integer  "place_id",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
