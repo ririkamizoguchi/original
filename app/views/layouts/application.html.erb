@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Original</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>JIMONAVI!</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  </head>
 
-<%= yield %>
+  <body>
+    <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6"><a href="/original">JIMONAVI!</a></h1>
+        <div class="user_nav grid-6">
+          <a class="user" href="/users">My Page</a>
+        </div>
+      </div>
+    </header>
 
-</body>
+
+  <div class="contents clearfix">
+    <div class="left-content">
+    </div>
+
+
+  <div class="contents clearfix">
+    <div class="right-content">
+    </div>
+  </div>
+
+    <footer>
+      <p></p>
+    </footer>
+  </body>
 </html>
