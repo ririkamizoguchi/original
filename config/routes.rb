@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources :prefectures
   resources :situations
   resources :original
+    get 'search' => 'original#search'
+
+
     get 'original' => 'original#index'
 
 
