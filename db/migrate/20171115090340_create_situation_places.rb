@@ -1,10 +1,10 @@
 class CreateSituationPlaces < ActiveRecord::Migration
   def change
     create_table :situation_places do |t|
-      t.reference :situation
-      t.reference :place
+      t.references :situation
+      t.references :place
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
