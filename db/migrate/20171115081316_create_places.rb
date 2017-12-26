@@ -3,7 +3,7 @@ class CreatePlaces < ActiveRecord::Migration
     create_table :places do |t|
 
       t.string :name
-      t.integer :prefecture_id
+      t.references :prefecture
       t.timestamps
     end
   end
