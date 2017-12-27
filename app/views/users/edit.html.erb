@@ -1,0 +1,7 @@
+<%= form_for @user,:url => {:action => 'update'}, :html => {:multipart => true} do |f| %>
+
+  <%= f.file_field :image %><br>
+  <%= f.submit %>
+
+<% end %>
+

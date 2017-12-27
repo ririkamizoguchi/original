@@ -1,0 +1,16 @@
+<div class="contents row" >
+<h1></h1>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to u.name, user_path(u.id) %>
+    </li>
+  <% end %>
+</ul>
+
+  <div class="contents clearfix">
+    <div class="left-content">
+    </div>
+    <div class="right-content">
+    </div>
+  </div>
