@@ -23,6 +23,10 @@ class PostsController < ApplicationController
   def destroy
   end
 
+  def search
+    @posts = Post.where('text LIKE ?', "%#{params[:keyword]}%")
+  end
+
 
 
 end
