@@ -1,5 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
+  storage :file
   process :resize_to_limit => [200, 200]
   process :convert => 'jpg'
   def extension_white_list
