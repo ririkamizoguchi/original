@@ -1,29 +1,23 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'original#index'
-  resources :users
-    get 'users' => 'users#index'
-    get 'users/:id' => 'users#show'
+  resources :original, only: :index
+
+  devise_for :users
+  resources :users, only: [:show, :edit, :create, :update] do
+    resources :bookmarks, only: [:index, :create, :destroy]
+  end
+
 
   resources :posts do
-      resources :comments
+    collection do
+      get 'search'
+      post 'search'
     end
-    get 'posts'  =>  'posts#index'
-    get 'posts/new'  =>  'posts#new'
-    get 'posts/:id' => 'posts#show'
-    get 'posts/:id/edit' => 'posts#edit'
-    delete 'posts/:id' => 'posts#destroy'
 
+  resources :comments, only: [:create, :edit, :update,:destroy]
+end
 
-  resources :bookmarks
-  resources :genre_places
-  resources :places
-  resources :prefectures
-  resources :situations
-  resources :original
-    get 'search' => 'original#search'
-    get 'original' => 'original#index'
-
+  resources :situations, only: [:new, :create]
 
 end
 
