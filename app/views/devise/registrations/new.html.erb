@@ -10,6 +10,26 @@
   </div>
 
   <div class="field">
+    <%= f.label :image, "ユーザー画像" %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender, "性別" %>
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday, "誕生日" %>
+    <%= f.text_field :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoemtown, "ホームタウン" %>
+    <%= f.text_field :hometown %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
   </div>
