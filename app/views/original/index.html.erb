@@ -1,5 +1,8 @@
 <div class="contents clearfix">
     <div class="left-content">
+    <input placeholder="都道府県" type="text" name="name">
+    <input placeholder="場所" type="text" name="name">
+    <input placeholder="シーン" type="text" name="name">
       <%= link_to '検索', "/search" %>
     </div>
   <div class="contents clearfix">
@@ -7,7 +10,7 @@
       <div class="user_image"></div>
       <h1>チャットで聞いてみる<h1/>
           <textarea placeholder="（例）小樽で彼女とデート中なのですが、2時間くらい過ごせるおすすめスポットありませんか？室内希望です。" cols=80 rows=10></textarea><br>
-        <%= link_to '新規投稿', "/posts/new" %>
+        <%= link_to '投稿', "/posts/create" %>
     </div>
 
   <div class="contents clearfix">
