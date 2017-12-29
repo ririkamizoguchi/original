@@ -7,4 +7,16 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
 
+
+ def index
+  @prefectures = Prefecture.where("pref = ?", prefecture_params[:pref])
+  end
+
+  private
+  def prefecture_params
+    params.permit(:pref)
+  end
+
+
 end
+
