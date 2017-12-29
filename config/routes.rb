@@ -33,5 +33,5 @@ res = Net::HTTP.start(url.host, url.port){|http|
 
 doc = REXML::Document.new(res.body)
 
-doc.elements.each('results/pref/') {|i|puts i.elements['name'].text}
+doc.elements.each('results/Prefecture/') {|i|puts i.elements['name'].text}
 
