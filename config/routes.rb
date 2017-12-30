@@ -21,17 +21,3 @@ end
 
 end
 
-
-require 'net/http'
-require 'uri'
-require 'rexml/document'
-
-url = URI.parse(URI.escape("http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610&reg=40"))
-res = Net::HTTP.start(url.host, url.port){|http|
-    http.get(url.path + "?" + url.query);
-}
-
-doc = REXML::Document.new(res.body)
-
-doc.elements.each('results/Prefecture/') {|i|puts i.elements['name'].text}
-
