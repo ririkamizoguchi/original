@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227105847) do
+ActiveRecord::Schema.define(version: 20171230100641) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20171227105847) do
     t.text     "image",      limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",    limit: 4
   end
 
   create_table "prefectures", force: :cascade do |t|
@@ -77,6 +78,9 @@ ActiveRecord::Schema.define(version: 20171227105847) do
     t.datetime "updated_at",                                      null: false
     t.string   "image",                  limit: 255
     t.string   "nickname",               limit: 255
+    t.string   "gender",                 limit: 255
+    t.date     "birthday"
+    t.string   "hometown",               limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
