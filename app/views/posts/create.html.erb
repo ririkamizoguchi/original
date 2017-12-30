@@ -1,0 +1,12 @@
+<div class="contents row">
+  <%= form_tag('/posts', method: :post) do %>
+    <h3>
+      投稿が完了しました
+    </h3>
+    <%= @post.text %>
+
+    <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
+    <a class="btn" href="/">トップへ戻る</a>
+  <% end %>
+</div>
+
