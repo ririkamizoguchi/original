@@ -1,6 +1,7 @@
 <div class="contents clearfix">
     <div class="left-content">
     <input placeholder="都道府県" type="text" name="name">
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
     <input placeholder="場所" type="text" name="name">
     <input placeholder="シーン" type="text" name="name">
       <%= link_to '検索', "/search" %>
