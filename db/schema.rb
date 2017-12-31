@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171230100641) do
+ActiveRecord::Schema.define(version: 20171231070418) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20171230100641) do
     t.string   "prefecture", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "post_id",    limit: 4
   end
 
   create_table "situation_places", force: :cascade do |t|
