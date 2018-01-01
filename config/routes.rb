@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 end
 
   resources :situations, only: [:new, :create]
+  resources :prefectures
 
 end
 
