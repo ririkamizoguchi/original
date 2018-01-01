@@ -7,11 +7,11 @@ def index
 
 
     @post = Post.new
-    # @situations = Situation.all
+    @situations = Situation.all
 
     @places = []
 
-    @prefectures = [] # プルダウン用の都道府県データを格納
+    @prefectures = Prefecture.all # プルダウン用の都道府県データを格納
     @areas = [] # プルダウン用の地域データを格納
 
     ### 都道府県 ###
