@@ -1,9 +1,9 @@
-<%= stylesheet_link_tag "user", :media => "all" %>
 <div class="contents clearfix">
+<link rel="stylesheet" href="users.css">
   <div class="left-content">
-    <a href="">
       <div class="user_image"><%= image_tag current_user.image %></div>
-    </a>
+      <div class="user_nickname"><%= current_user.nickname %></div>
+      <div class="user_hometown"><%= current_user.hometown %></div>
   </div>
 </div>
 <div class="contents clearfix">
