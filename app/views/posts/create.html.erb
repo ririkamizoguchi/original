@@ -3,6 +3,8 @@
     <h3>
       投稿が完了しました
     </h3>
+   <a href="">
+    <span>投稿者</span><%= current_user.nickname %></a>
     <%= @post.text %>
 
     <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
