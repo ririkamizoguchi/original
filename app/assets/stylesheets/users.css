@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6,p {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 600px;
+  height: 900px;
   width: 960px;
   margin: 10px auto;
   background-color: gray;
@@ -29,7 +29,7 @@ h1,h2,h3,h4,h5,h6,p {
 
 .middle-content {
   text-align: center;
-  height: 300px;
+  height: 600px;
   width: 960px;
   margin: 10px auto;
   background-color: white;
