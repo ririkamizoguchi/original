@@ -1,7 +1,6 @@
 <div class="contents clearfix">
     <div class="left-content">
     <input placeholder="都道府県" type="text" name="name">
-    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
     <input placeholder="場所" type="text" name="name">
     <input placeholder="シーン" type="text" name="name">
       <%= link_to '検索', "/search" %>
@@ -11,7 +10,7 @@
       <div class="user_image"></div>
       <h1>チャットで聞いてみる<h1/>
         <%= form_for(@post) do |f| %>
-    <%= f.text_area :text, placeholder: "例）小樽で彼女とデート中なのですが、2時間くらい過ごせるおすすめスポットありませんか？室内希望です。", cols: "80", rows: "10" %>
+    <%= f.text_area :text, placeholder: "例）小樽で彼女とデート中なのですが、2時間くらい過ごせるおすすめスポットありませんか？室内希望です。", cols: "100", rows: "10" %>
     <%= f.submit value: "新規投稿" %>
     <% end %>
 
