@@ -12,7 +12,7 @@ def index
     @places = []
 
     @prefectures = Prefecture.all # プルダウン用の都道府県データを格納
-    @areas = [] # プルダウン用の地域データを格納
+    @areas = Area.all # プルダウン用の地域データを格納
 
     ### 都道府県 ###
 
@@ -66,8 +66,12 @@ def index
   end
 
   def smallarea
+    uri = URI.parse("http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610")
+    xml = Net::HTTP.get(uri)
+    json = Hash.from_xml(xml).to_json
+    result = JSON.parse(json)
 
-
+    result["Results"]["Area"]["Region"][i]["SmallArea"].each_with_index {|area| @areas << area["name"]}
   end
 
 end
