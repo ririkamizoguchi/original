@@ -8,11 +8,8 @@ def index
 
     @post = Post.new
     @situations = Situation.all
-
-    @places = []
-
     @prefectures = Prefecture.all # プルダウン用の都道府県データを格納
-    @areas = Area.all # プルダウン用の地域データを格納
+    # @smallareas = Area.all # プルダウン用の地域データを格納
 
     ### 都道府県 ###
 
@@ -64,6 +61,7 @@ def index
     result["Results"]["Area"]["Region"][i]["Prefecture"].each_with_index {|pref| @prefectures << pref["name"]}
 
   end
+
 
   def smallarea
     uri = URI.parse("http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610")
