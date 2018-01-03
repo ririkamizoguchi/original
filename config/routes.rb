@@ -19,6 +19,7 @@ end
 
   resources :situations, only: [:new, :create]
   resources :prefectures
+  resources :smallareas
 
 end
 
