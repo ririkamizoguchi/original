@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103092501) do
+ActiveRecord::Schema.define(version: 20180103171448) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180103092501) do
     t.datetime "updated_at"
     t.integer  "user_id",       limit: 4
     t.integer  "prefecture_id", limit: 4
+    t.integer  "smallarea_id",  limit: 4
   end
 
   create_table "posts_situaions", force: :cascade do |t|
