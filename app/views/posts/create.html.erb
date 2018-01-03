@@ -4,7 +4,8 @@
       投稿が完了しました
     </h3>
 
-    <span>投稿者</span><a href="/users/#{@user.id}/show"><%= current_user.nickname %></a>
+    <span>投稿者</span>
+    <%= link_to "#{current_user.nickname}", user_path(current_user) %>
     <%= @post.text %>
 
     <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>

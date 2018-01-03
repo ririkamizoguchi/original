@@ -31,22 +31,24 @@
   <div class="container">
     <% if current_user %>
       <%= form_tag("/posts/#{@post.id}/comments", method: :post) do %>
-        <textarea cols="100" name="text" placeholder="コメントする" rows="2"></textarea>
+        <textarea cols="100" name="comments" placeholder="コメントする" rows="2"></textarea>
         <input type="submit" value="送信">
       <% end %>
     <% end %>
   </div>
+  <div class="contents clearfix">
     <div class="right-content">
       <h4>＜コメント一覧＞</h4>
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-            <%= comment.text %>
+            <%= comment.comments %>
           </p>
         <% end %>
       <% end %>
     </div>
+  </div>
   </div>
 
 

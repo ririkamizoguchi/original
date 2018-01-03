@@ -1,36 +1,43 @@
-<%= stylesheet_link_tag "inside/users", :media => "all" %>
+<%= stylesheet_link_tag "users", :media => "all" %>
 <div class="contents clearfix">
   <div class="left-content">
-      <div class="user_image"><%= image_tag current_user.image %></div>
+      <div class="user_image"><%= image_tag @user.image %></div>
       <ul class="more_list">
-      <li>
-      <div class="user_nickname"><%= current_user.nickname %></div>
-      </li>
-      <li>
-      <div class="user_hometown"><%= current_user.hometown %></div>
-      </li>
-
+        <li>
+        <div class="user_nickname"><%= @user.nickname %></div>
+        </li>
+        <li>
+        <div class="user_hometown"><%= @user.hometown %></div>
+        </li>
+      </ul>
   </div>
 </div>
+
 <div class="contents clearfix">
   <div class="middle-content">
     <h1>コメント一覧<h1/>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.comments %>
+          </p>
+        <% end %>
+      <% end %>
   </div>
 </div>
   <div class="contents clearfix">
     <div class="right-content">
-    <span><%= current_user.nickname %>さんの投稿一覧</span>
+    <span><%= @user.nickname %>さんの投稿一覧</span>
     <% if @posts %>
-    <% @posts.each do |post| %>
-      <%= render partial: "posts/post", locals: { post: post } %>
-    <% end %>
-        <%= paginate(@posts) %>
+      <% @posts.each do |post| %>
+        <%= render partial: "posts/post", locals: { post: post } %>
+      <% end %>
+      <%= paginate(@posts) %>
+      ssssssss
     <% end %>
   </div>
 </div>
 
-
-
-</div>
 
 

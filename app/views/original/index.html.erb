@@ -1,10 +1,17 @@
+<%= stylesheet_link_tag "original", :media => "all" %>
+
 <div class="contents clearfix">
-  <link rel="stylesheet" type="text/css" href="original.css">
+
     <div class="left-content">
-    <input placeholder="都道府県" type="text" name="name">
+    <%= form_tag('posts/search') do %>
+
+
+    <%= collection_select :post, :prefecture_id, Prefecture.all, :id, :prefecture %>
     <input placeholder="場所" type="text" name="name">
-    <input placeholder="シーン" type="text" name="name">
-      <%= link_to '検索', "/search" %>
+    <%= collection_select :situation, :situation_id, Situation.all, :id, :situation %>
+
+      <button type="submit">探す</button>
+      <% end %>
     </div>
   <div class="contents clearfix">
     <div class="middle-content">
@@ -20,8 +27,10 @@
   <div class="contents clearfix">
     <div class="right-content">
       <h2>注目のQ&Aから探す<h2/>
+
     </div>
   </div>
+
 
 
 
