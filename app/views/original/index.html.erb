@@ -17,19 +17,21 @@
     <div class="middle-content">
       <div class="user_image"></div>
       <h1>チャットで聞いてみる<h1/>
-        <%= form_for(@post) do |f| %>
-    <%= f.text_area :text, placeholder: "例）小樽で彼女とデート中なのですが、2時間くらい過ごせるおすすめスポットありませんか？室内希望です。", cols: "100", rows: "10" %>
-    <%= f.submit value: "新規投稿" %>
+        <%= form_for(@posts) do |f| %>
+    <%= f.text_area :text, placeholder: "例）小樽で彼女とデート中なのですが、2時間くらい過ごせるおすすめスポットありませんか？室内希望です。", cols: "100", rows: "10" %><br>
+    <%= f.collection_select :tag_list, @prefectures, :id, :prefecture %>
+    <%= f.collection_select :tag_list, @smallareas, :id, :name %>
+    <%= f.collection_select :tag_list, @situations, :id, :situation %>
+    <%= f.submit value: "投稿" %>
     <% end %>
 
     </div>
-
   <div class="contents clearfix">
     <div class="right-content">
       <h2>注目のQ&Aから探す<h2/>
-
     </div>
   </div>
+
 
 
 
