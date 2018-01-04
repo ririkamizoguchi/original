@@ -31,9 +31,9 @@ class PostsController < ApplicationController
  private
 
 def post_params
-  params.require(:post).permit(:text, :tag_list).merge(user_id: current_user.id)
+  binding.pry
+  params.require(:post).permit(:text, tag_lists: []).merge(user_id: current_user.id, prefecture_id: params[:post][:tag_list][0], smallarea_id: params[:post][:tag_list][1], situation_id: params[:post][:tag_list][2])
 end
-
 
 
 end
