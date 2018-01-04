@@ -14,8 +14,10 @@ class Areadb
   imformation = page.search('SmallArea')
   imformation.each do | info |
     puts info[:name]
-    sleep(1)
-    SmallArea.create(name: info[:name])
+    sleep(0.5)
+
+    sa = SmallArea.where(name: info[:name]).first_or_initialize
+    sa.save
   end
 
 end
