@@ -1,23 +1,26 @@
 class Areadb
-  @smallareas = []
+  def self.smallarea
+    @smallareas = []
 
-  require "net/http"
-  require "uri"
-  require 'pry-rails'
-  require 'nokogiri'
-  require 'open-uri'
+    require "net/http"
+    require "uri"
+    require 'pry-rails'
+    require 'nokogiri'
+    require 'open-uri'
 
-  uri = "http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610"
+    uri = "http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610"
 
-  page = Nokogiri::XML(open(uri).read)
-  puts page
-  imformation = page.search('SmallArea')
-  imformation.each do | info |
-    puts info[:name]
-    sleep(0.5)
+    page = Nokogiri::XML(open(uri).read)
+    puts page
+    imformation = page.search('SmallArea')
+    imformation.each do | info |
+      puts info[:name]
+      sleep(0.5)
 
-    sa = SmallArea.where(name: info[:name]).first_or_initialize
-    sa.save
+      sa = SmallArea.where(name: info[:name]).first_or_initialize
+      sa.save
+    end
+
   end
 
 end
