@@ -30,45 +30,7 @@ def index
 
   end
 
-  def hokkaido
-    uri = URI.parse("http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610")
-    xml = Net::HTTP.get(uri)
-    json = Hash.from_xml(xml).to_json
-    result = JSON.parse(json)
 
-    @prefectures << result["Results"]["Area"]["Region"][0]["name"]
-
-  end
-
-  def okinawa
-    uri = URI.parse("http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610")
-    xml = Net::HTTP.get(uri)
-    json = Hash.from_xml(xml).to_json
-    result = JSON.parse(json)
-
-    @prefectures << result["Results"]["Area"]["Region"][11]["name"]
-
-  end
-
-  def prefecture(i)
-    uri = URI.parse("http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610")
-    xml = Net::HTTP.get(uri)
-    json = Hash.from_xml(xml).to_json
-    result = JSON.parse(json)
-
-    result["Results"]["Area"]["Region"][i]["Prefecture"].each_with_index {|pref| @prefectures << pref["name"]}
-
-  end
-
-
-  def smallarea
-    uri = URI.parse("http://jws.jalan.net/APICommon/AreaSearch/V1/?key=and1609fe48610")
-    xml = Net::HTTP.get(uri)
-    json = Hash.from_xml(xml).to_json
-    result = JSON.parse(json)
-
-    result["Results"]["Area"]["Region"][i]["SmallArea"].each_with_index {|area| @areas << area["name"]}
-  end
 
 end
 
