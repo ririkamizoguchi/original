@@ -4,25 +4,23 @@ require 'uri'
 require 'rexml/document'
 
 def index
-
-
-    @post = Post.new
+    @posts = Post.new
     @situations = Situation.all
-    @prefectures = Prefecture.all # プルダウン用の都道府県データを格納
-    @smallareas = SmallArea.all # プルダウン用の地域データを格納
+    @prefectures = Prefecture.all
+    @smallareas = SmallArea.all
 
     ### 都道府県 ###
 
-    hokkaido # 北海道
+    # hokkaido # 北海道
 
-    for i in 1..10 do # 北海道と沖縄以外
-      prefecture(i)
-    end
+    # for i in 1..10 do # 北海道と沖縄以外
+    #   prefecture(i)
+    # end
 
-    okinawa # 沖縄
+    # okinawa # 沖縄
 
+    # # p @prefectures
     # p @prefectures
-    p @prefectures
 
 
     ### 地域 ###
