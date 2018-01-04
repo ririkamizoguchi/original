@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = Post.where(user_id: params[:id]).page(params[:page]).per(5)
 
+
   end
 
   def new

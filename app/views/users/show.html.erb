@@ -5,13 +5,12 @@
       <div class="user_image">
         <%= image_tag @user.image %>
       </div>
-
       <ul class="more_list">
         <li>
         <div class="user_nickname">name：<%= @user.nickname %></div>
         </li>
         <li>
-        <div class="user_hometown"><%= @user.hometown %></div>
+        <div class="user_hometown">hometown：<%= @user.hometown %></div>
         </li>
       </ul>
   </div>
@@ -30,12 +29,12 @@
 </div>
   <div class="contents clearfix">
     <div class="right-content">
-    <span><%= @user.nickname %>さんの投稿一覧</span>
+    <h2><%= @user.nickname %>さんの投稿一覧</h2><br><br>
     <% if @posts %>
       <% @posts.each do |post| %>
         <%= render partial: "posts/post", locals: { post: post } %>
       <% end %>
-
+      <p>
       <%= paginate(@posts) %>
     <% end %>
   </div>
