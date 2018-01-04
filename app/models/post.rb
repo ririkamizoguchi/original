@@ -6,4 +6,7 @@ class Post < ActiveRecord::Base
     has_many :bookmarks
     has_many :situaions, through: :posts_situaions
     has_many :posts_situaions, dependent: :destroy
+
+    acts_as_taggable_on :labels
+    acts_as_taggable
 end
