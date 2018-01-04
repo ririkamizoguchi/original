@@ -58,7 +58,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-  gem 'mysql2', '0.3.18'
 group :production do
   gem 'rails_12factor'
   gem 'pg'
