@@ -8,15 +8,10 @@
 
       <ul class="more_list">
         <li>
-        <div class="user_nickname"><%= @user.nickname %></div>
+        <div class="user_nickname">name：<%= @user.nickname %></div>
         </li>
         <li>
         <div class="user_hometown"><%= @user.hometown %></div>
-        </li>
-        <% if user_signed_in? %>
-        <li>
-        <%= f.text_area :text, placeholder: "自己紹介を記入してください", cols: "100", rows: "10" %>
-        <%= f.submit value: "投稿" %>
         </li>
       </ul>
   </div>
@@ -40,8 +35,8 @@
       <% @posts.each do |post| %>
         <%= render partial: "posts/post", locals: { post: post } %>
       <% end %>
-      <%= paginate(@posts) %>
 
+      <%= paginate(@posts) %>
     <% end %>
   </div>
 </div>

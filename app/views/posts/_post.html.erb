@@ -1,15 +1,7 @@
 <div class="content_post" style="background-image: url(<%= post.image %>);">
-  </div>
   <%= simple_format(post.text) %>
-  <span class="name">
-    <span>投稿者</span>
-    <a href="/users/<%= post.user_id %>">
-    <%= post.user.nickname %>
-    </a>
-  </span>
 </div>
   <div class="more">
-    <span><%= image_tag 'arrow_top.png' %></span>
         <%= link_to "詳細", post_path(post.id), method: :get %>
       <% if user_signed_in? && current_user.id == post.user_id %>
           <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
