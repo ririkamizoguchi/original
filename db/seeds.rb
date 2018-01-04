@@ -11,5 +11,6 @@
 require "csv"
 # prefectures
 CSV.foreach('db/pref_code.csv') do |row|
+  sleep(0.5)
   Prefecture.create(:id => row[0], :prefecture => row[1])
 end
