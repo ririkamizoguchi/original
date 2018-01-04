@@ -13,7 +13,7 @@
         <li>
         <div class="user_hometown"><%= @user.hometown %></div>
         </li>
-        <% if user_signed_in? && current_user.id == post.user_id %>
+        <% if user_signed_in? %>
         <li>
         <%= f.text_area :text, placeholder: "自己紹介を記入してください", cols: "100", rows: "10" %>
         <%= f.submit value: "投稿" %>
@@ -27,10 +27,8 @@
     <h1>コメント一覧<h1/>
       <% if @comments %>
         <% @comments.each do |comment| %>
-          <p>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.comments %>
-          </p>
         <% end %>
       <% end %>
   </div>
