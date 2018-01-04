@@ -52,6 +52,7 @@ end
   gem 'carrierwave'
   gem 'mini_magick'
   gem 'kaminari'
+  gem 'acts-as-taggable-on', '~> 3.4'
 
 
 
