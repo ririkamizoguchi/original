@@ -61,6 +61,10 @@ h1,h2,h3,h4,h5,h6,p {
   font-size: 18px;
 }
 
+.more_list {
+  font-size: 18px
+}
+
 ul {
   margin: 0;
   padding: 0;

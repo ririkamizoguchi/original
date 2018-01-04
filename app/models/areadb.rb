@@ -14,6 +14,7 @@ class Areadb
   imformation = page.search('SmallArea')
   imformation.each do | info |
     puts info[:name]
+    sleep(0.3)
     SmallArea.create(name: info[:name])
   end
 

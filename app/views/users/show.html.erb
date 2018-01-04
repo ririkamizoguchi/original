@@ -13,6 +13,11 @@
         <li>
         <div class="user_hometown"><%= @user.hometown %></div>
         </li>
+        <% if user_signed_in? && current_user.id == post.user_id %>
+        <li>
+        <%= f.text_area :text, placeholder: "自己紹介を記入してください", cols: "100", rows: "10" %>
+        <%= f.submit value: "投稿" %>
+        </li>
       </ul>
   </div>
 </div>
