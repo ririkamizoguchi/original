@@ -10,7 +10,8 @@ require 'rexml/document'
     @smallareas = SmallArea.all
   end
   def show
-    @posts = Post.find(params[:id])
+    @posts = Post.all
+    # @posts = Post.find(params[:id])
   end
 end
 
