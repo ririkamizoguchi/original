@@ -4,17 +4,17 @@ require 'uri'
 require 'rexml/document'
 
   def index
-    @posts = Post.new
+    @post = Post.new
+    @posts = Post.all
     @situations = Situation.all
     @prefectures = Prefecture.all
     @smallareas = SmallArea.all
   end
-  def show
-    # @posts = Post.all
-    @posts = Post.find(params[:id])
-  end
+  # def show
+  #   # @posts = Post.all
+  #   @posts = Post.find(params[:id])
+  # end
 end
-
 
 
 
