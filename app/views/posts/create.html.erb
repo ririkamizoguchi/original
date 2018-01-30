@@ -1,16 +1,18 @@
-<div class="contents row">
+<%= stylesheet_link_tag "original", :media => "all" %>
+<div class="contents clearfix">
+  <div class="left-content">
   <%= form_tag('/posts', method: :post) do %>
-    <h3>
+    <h3 align="center">
       投稿が完了しました
     </h3>
-
-    <span>投稿者</span>
     <%= link_to "#{current_user.nickname}", user_path(current_user) %>
     <%= @post.text %>
 
     <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
-    <%= link_to '削除', "/posts/#{@post.id}", method: :delete %>
-    <a class="btn" href="/">トップへ戻る</a>
+    <%= link_to '削除', "/posts/#{@post.id}", method: :delete %><br>
+    <a class align="center"="btn" href="/">トップへ戻る</a>
   <% end %>
 </div>
+</div>
+
 

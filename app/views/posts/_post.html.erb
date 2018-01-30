@@ -1,13 +1,17 @@
-<%= stylesheet_link_tag "original", :media => "all" %>
 <div class="content_post">
-  <%= simple_format(post.text) %>
-</div>
-  <div class="more">
-        <%= link_to "詳細", post_path(post.id), method: :get %>
+  <%= stylesheet_link_tag "posts"%>
+  <ul class="more_list">
+  <li><%= simple_format(post.text) %></li>
+    <li>
+        <%= link_to "詳細", post_path(post.id), method: :get %>&ensp;
       <% if user_signed_in? && current_user.id == post.user_id %>
-          <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+          <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>&ensp;
           <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
-      <% end %>
-    </div>
+    </li>
+          <% end %>
+  </ul>
+
+</div>
+
 
 

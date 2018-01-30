@@ -1,3 +1,48 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #f4f4f4;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+a {
+color:#000099;
+text-decoration:none;
+}
+
+a:link {
+color:#000099;
+text-decoration:none;
+}
+
+a:visited {
+color:#000099;
+text-decoration:none;
+}
+
+a:hover {
+color:#000099;
+text-decoration:underline;
+}
+
+.content_post {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 100px;
+  width: 700px;
+  margin: 10px auto;
+}
+
+.more_list {
+  font-size: 18px;
+  font-family: fantasy;
+}

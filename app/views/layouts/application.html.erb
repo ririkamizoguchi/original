@@ -1,25 +1,8 @@
 <!DOCTYPE html>
+<%= stylesheet_link_tag 'application', media: 'all' %>
 <html>
   <head>
     <title>JIMONAVI</title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-
-    <script type="text/javascript">
-      WebFontConfig = {
-        google: { families: [ 'Unica+One::latin' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })();
-    </script>
   </head>
 
   <body>
@@ -28,14 +11,12 @@
         <h1 class="grid-6"><a href="/">JIMONAVI</a></h1>
           <% if user_signed_in? %>
             <div class align="right"="user_nav grid-6">
-              <span><%= current_user.nickname %>
                 <ul class="user__info">
                   <li>
-                    <a href="/users/<%= current_user.id %>">マイページ</a>
+                    <a href="/users/<%= current_user.id %>">マイページ</a>&ensp;
                     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                   </li>
                 </ul>
-              </span>
             </div>
           <% else %>
             <div class align="right"="grid-6">

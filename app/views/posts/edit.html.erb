@@ -1,11 +1,15 @@
-<div class="contents row">
+<%= stylesheet_link_tag "original", :media => "all" %>
+<div class="contents clearfix">
+  <div class="left-content">
   <%= form_tag("/posts/#{@post.id}", :method => :patch ) do %>
-    <h3>
+    <h3 align="center">
       編集する
     </h3>
-    <textarea cols="30" name="text" placeholder="text" rows="10"><%= @post.text %></textarea>
-    <input type="submit" value="SENT">
+    <textarea cols="100" name="text" placeholder="text" rows="8"><%= @post.text %></textarea>
+
+    <input type="submit" value="edit">
   <% end %>
+</div>
 </div>
 
 

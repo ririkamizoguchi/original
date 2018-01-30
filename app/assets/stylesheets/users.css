@@ -7,6 +7,7 @@ body {
 h1,h2,h3,h4,h5,h6,p {
   padding: 10px 0;
   margin: 0;
+  font-size: 20px;
 }
 
 .contents {
@@ -23,7 +24,7 @@ h1,h2,h3,h4,h5,h6,p {
   height: 200px;
   width: 960px;
   margin: 10px auto;
-  background-color: white;
+  background-color: #ffffe6;
   font-size: 15px;
   float: left;
 }
@@ -33,16 +34,16 @@ h1,h2,h3,h4,h5,h6,p {
   height: 300px;
   width: 960px;
   margin: 10px auto;
-  background-color: white;
+  background-color: #ffffe6;
   float: left;
 }
 
 .right-content {
   text-align: center;
-  height: 900px;
+  height: 700px;
   width: 960px;
   margin: 10px auto;
-  background-color: white;
+  background-color: #ffffe6;
   float: left;
   font-size: 20px;
 }
@@ -54,10 +55,10 @@ h1,h2,h3,h4,h5,h6,p {
   clear: both;
   display: block;
 }
-
+/*
 .title {
   font-family: fantasy;
-}
+}*/
 
 .heading-sentence {
   font-size: 18px;
